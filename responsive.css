@@ -1,6 +1,12 @@
-@media screen and (min-width : 375px){
+@media screen and (max-width : 767px){
     header > p {
         padding: 10px;
         font-size: 15px;
+    }
+    nav {
+        display: none;
+    }
+    .barre {
+        grid-template-columns: 1fr auto;
     }
 }
