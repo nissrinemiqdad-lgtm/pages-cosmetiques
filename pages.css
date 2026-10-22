@@ -61,7 +61,7 @@ header>p {
 
 .info {
     border-radius: 25px;
-    background-color: white;
+    background-color: #f3e8e5;
     margin: 20px;
     padding: 32px;
     min-height: 400px;
@@ -199,13 +199,10 @@ input[type="radio"] {
 #teinte-05 + label { --couleur: #663349; }
 #teinte-06 + label { --couleur: #563B35; }
 
-/* ===== Accessibilité : contour quand on navigue au clavier ===== */
 input:focus-visible + label {
     outline: 3px solid #79384E;
     outline-offset: 3px;
 }
-
-/* ===== Messages ===== */
 
 .message {
     grid-column: 1 / -1;
@@ -233,7 +230,7 @@ input:focus-visible + label {
     font-size: 0.85rem;
     color: #7a6a70;
 }
-/* ===== Barre du bas : prix et bouton ===== */
+
 .barre-prix {
     display: flex;
     justify-content: space-between;
@@ -274,7 +271,6 @@ input:focus-visible + label {
     outline-offset: 3px;
 }
 
-/* ===== Pied de page ===== */
 footer {
     display: flex;
     justify-content: space-between;
