@@ -76,7 +76,7 @@ header>p {
     height: auto;
     display: block;
 }
-/* ===== Textes ===== */
+
 body {
     font-family: "DM Sans", sans-serif;
     color: #342029;
@@ -108,7 +108,7 @@ h1 {
     line-height: 1.5;
 }
 
-/* ===== Groupes (fieldset) ===== */
+
 fieldset {
     border: none;
     margin-top: 28px;
@@ -130,7 +130,6 @@ input[type="radio"] {
     height: 1px;
 }
 
-/* ===== Cartes (essentiel et fini) ===== */
 .cartes {
     display: grid;
     grid-template-columns: 1fr 1fr;
