@@ -82,7 +82,7 @@ body {
     color: #342029;
 }
 
-.etapes {
+.étapes {
     font-size: 0.8rem;
     color: #79384E;
     margin-bottom: 16px;
@@ -96,7 +96,7 @@ body {
 }
 
 h1 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: serif;
     font-weight: 400;
     font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.1;
@@ -119,7 +119,6 @@ legend {
     margin-bottom: 12px;
 }
 
-/* On cache le rond du bouton radio, mais il reste accessible au clavier */
 .cartes div,
 .teintes div {
     position: relative;
@@ -127,7 +126,6 @@ legend {
 
 input[type="radio"] {
     position: absolute;
-    opacity: 0;
     width: 1px;
     height: 1px;
 }
@@ -165,11 +163,6 @@ input[type="radio"] {
     box-shadow: 0 0 0 1px #79384E;
 }
 
-.cartes input:checked + label::before {
-    content: "✓ ";
-}
-
-/* ===== Pastilles de teinte ===== */
 .teintes {
     display: flex;
     flex-wrap: wrap;
@@ -238,5 +231,56 @@ input:focus-visible + label {
     flex-basis: 100%;
     margin-top: 20px;
     font-size: 0.85rem;
+    color: #7a6a70;
+}
+/* ===== Barre du bas : prix et bouton ===== */
+.barre-prix {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 32px;
+    background-color: white;
+}
+
+.creation {
+    font-size: 0.85rem;
+    color: #7a6a70;
+}
+
+.prix {
+    font-size: 2rem;
+    color: #342029;
+}
+
+.bouton {
+    padding: 16px 40px;
+    background-color: #79384E;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton:hover {
+    background-color: #5e2a3b;
+}
+
+.bouton:focus-visible {
+    outline: 3px solid #79384E;
+    outline-offset: 3px;
+}
+
+/* ===== Pied de page ===== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 20px 32px;
+    background-color: #f3e8e5;
+    font-size: 0.8rem;
     color: #7a6a70;
 }
