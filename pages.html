@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez-NUANCE</title>
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header>
+        <p>Votre beauté, vos règles. Composez votre essentiel.</p>
+        <div class="barre">
+            <span class="logo">NUANCE</span>
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#">Le studio</a></li>
+                    <li><a href="#">Notre philosophie</a></li>
+                    <li><a href="#">Besoin d’aide ?</a></li>
+                </ul>
+            </nav>
+            <img class="panier" src="images/Panier.png" alt="panier">
+        </div>
+    </header>
+    <main>
+        <section class="produit">
+            <div class="image-produit">
+                <img src="images/Aperçu produit en direct.png" alt="images du produit">
+            </div>
+            <div class="info">
+                <nav class="étapes" aria-label="Etapes">01 Personnaliser — 02 Récapitulatif </nav>
+                <p class="sur-titre">LE STUDIO DE VOTRE SINGULARITÉ</p>
+                <h1>La beauté à votre image</h1>
+                <p class="intro">Une texture, une teinte, un fini. Composez l'essentiel qui vous ressemble</p>
+                <form id="configurateur">
+                    <fieldset class="cartes">
+                        <legend>01 Votre essentiel</legend>
+                        <div>
+                            <input type="radio" id="fond-de-teint" name="essentiel" value="fond-de-teint" >
+                            <label for="fond-de-teint">Fond de teint </label>
+                        </div>
+                        <div>
+                            <input type="radio" id="rouge-a-levres" name="essentiel" value="rouge-a-levres"  checked>
+                            <label for="rouge-a-levres">Rouge a levres </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="teintes">
+                        <legend>02 Votre teinte</legend>
+                        <div>
+                            <input type="radio" id="teinte-01" name="teinte" value="nude" data-couleur="#C08B78">
+                            <label for="teinte-01">01</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-02" name="teinte" value="rosewood" data-couleur="#98526A" checked>
+                            <label for="teinte-02">02</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-03" name="teinte" value="terracotta" data-couleur="#B76D58">
+                            <label for="teinte-03">03</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-04" name="teinte" value="cerise" data-couleur="#AF354D">
+                            <label for="teinte-04">04</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-05" name="teinte" value="prune" data-couleur="#663349">
+                            <label for="teinte-05">05</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-06" name="teinte" value="chocolat" data-couleur="#563B35">
+                            <label for="teinte-06">06</label>
+                        </div>
+                        <p class="note">Un bois de rose doux aux sous-tons chauds</p>
+                    </fieldset>
+                    <fieldset class="cartes">
+                        <legend>03 Le fini</legend>
+                        <div>
+                            <input type="radio" id="fini-mat" name="fini" value="mat" data-prix="0" checked>
+                            <label for="fini-mat">Mat <span>Velouté · Inclus</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" id="fini-brillant" name="fini" value="brillant" data-prix="15">
+                            <label for="fini-brillant">Brillant <span>Lumineux · + 15 DH</span></label>
+                        </div>
+                        <p class="message">
+                            <svg class="icone" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14" />
+                                <path d="M5 19l8-8" />
+                            </svg>
+                            <span id="message-fini">Le fini mat révèle la couleur avec un effet velouté.</span>
+                        </p>
+                    </fieldset>
+                    <p class="note">Le prix évolue selon vos choix. Vous pourrez les modifier au récapitulatif.</p>
+                </form>
+            </div>
+        </section>
+        <section class="barre-prix">
+            <div>
+                <p class="creation">Votre création · Rouge à lèvres</p>
+                <p class="prix" id="prix-total" aria-live="polite">120,00 DH</p>
+            </div>
+            <button class="bouton" type="submit" form="configurateur">Ajouter au panier →</button>
+        </section>
+    </main>
+    <footer>
+        <p>NUANCE — L'essentiel, c'est vous.</p>
+        <p>Une création unique, la vôtre.</p>
+    </footer>
+    <script src="pages.js"></script>
+</body>
+
+</html>
