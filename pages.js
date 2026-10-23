@@ -4,12 +4,12 @@ const config = {
         rouge: { name: "Rouge à lèvres", price: 120 }
     },
     teinte: {
-        nude: { name: "Nude", price: 0 },
-        rosewood: { name: "Rosewood", price: 0 },
-        terracotta: { name: "Terracotta", price: 0 },
-        cerise: { name: "Cerise", price: 0 },
-        prune: { name: "Prune", price: 0 },
-        chocolat: { name: "Chocolat", price: 0 }
+        nude: { name: "Nude", price: 10 },
+        rosewood: { name: "Rosewood", price: 10 },
+        terracotta: { name: "Terracotta", price: 10 },
+        cerise: { name: "Cerise", price: 10 },
+        prune: { name: "Prune", price: 10 },
+        chocolat: { name: "Chocolat", price: 10 }
     },
     fini: {
         mat: { name: "Mat", price: 10 },
