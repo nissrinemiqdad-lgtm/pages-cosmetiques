@@ -152,10 +152,6 @@ input[type="radio"] {
     color: #7a6a70;
 }
 
-.cartes label:hover {
-    border-color: #79384E;
-}
-
 .cartes input:checked + label {
     background-color: #f5e6e8;
     border-color: #79384E;
@@ -217,10 +213,6 @@ input:focus-visible + label {
 
 .message span {
     color: #7a6a70;
-}
-
-.icone {
-    flex-shrink: 0;
 }
 
 .note {
