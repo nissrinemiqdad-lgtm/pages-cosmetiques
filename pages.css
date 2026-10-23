@@ -10,7 +10,7 @@ header>p {
     padding: 12px;
     color: white;
     text-align: center;
-    font-style: bold;
+  font-weight: bold ;
     font-size: large;
 }
 
@@ -21,22 +21,25 @@ header>p {
     font-size: 32px;
     letter-spacing: 5px;
 }
+
 .barre {
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    background-color: #f3e5e9;
+    background-color: #f3e8e5;
     width: 100%;
     padding: 20px;
     display: grid;
 }
+
 .navigation {
     display: flex;
     list-style-type: none;
-    gap: 20px ;
+    gap: 20px;
 
 }
-.navigation > li > a {
-    color:#342029;
+
+.navigation>li>a {
+    color: #342029;
     text-decoration: none;
 }
 
@@ -46,3 +49,225 @@ header>p {
     justify-self: end;
 }
 
+.produit {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    align-items: start ;
+    gap: 24px;
+    padding: 32px;
+    background-color: #f3e8e5;
+    border-top : 3px #79384E solid;
+}
+
+.info {
+    border-radius: 25px;
+    background-color: #f3e8e5;
+    margin: 20px;
+    padding: 32px;
+    min-height: 400px;
+}
+
+.image-produit {
+    margin: 20px;
+
+}
+.image-produit img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #342029;
+}
+
+.étapes {
+    font-size: 0.8rem;
+    color: #79384E;
+    margin-bottom: 16px;
+}
+
+.sur-titre {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: #79384E;
+    margin-top: 10px;
+}
+
+h1 {
+    font-family: serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin: 8px 0 16px;
+}
+
+.intro {
+    color: #7a6a70;
+    line-height: 1.5;
+}
+
+
+fieldset {
+    border: none;
+    margin-top: 28px;
+}
+
+legend {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.cartes div,
+.teintes div {
+    position: relative;
+}
+
+input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+.cartes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.cartes label {
+    display: block;
+    padding: 16px 18px;
+    background-color: white;
+    border: 1px solid #e5d5d8;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.cartes label span {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #7a6a70;
+}
+
+.cartes input:checked + label {
+    background-color: #f5e6e8;
+    border-color: #79384E;
+    box-shadow: 0 0 0 1px #79384E;
+}
+
+.teintes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.teintes label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #7a6a70;
+    cursor: pointer;
+}
+
+.teintes label::before {
+    content: "";
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--couleur);
+}
+
+.teintes input:checked + label::before {
+    outline: 2px solid #79384E;
+    outline-offset: 3px;
+}
+
+#teinte-01 + label { --couleur: #C08B78; }
+#teinte-02 + label { --couleur: #98526A; }
+#teinte-03 + label { --couleur: #B76D58; }
+#teinte-04 + label { --couleur: #AF354D; }
+#teinte-05 + label { --couleur: #663349; }
+#teinte-06 + label { --couleur: #563B35; }
+
+input:focus-visible + label {
+    outline: 3px solid #79384E;
+    outline-offset: 3px;
+}
+
+.message {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background-color: #f5e6e8;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #79384E;
+}
+
+.message span {
+    color: #7a6a70;
+}
+
+.note {
+    flex-basis: 100%;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #7a6a70;
+}
+
+.barre-prix {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 32px;
+    background-color: white;
+}
+
+.creation {
+    font-size: 0.85rem;
+    color: #7a6a70;
+}
+
+.prix {
+    font-size: 1.5rem;
+    color: #342029;
+}
+
+.bouton {
+    padding: 16px 40px;
+    background-color: #79384E;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton:hover {
+    background-color: #5e2a3b;
+}
+
+.bouton:focus-visible {
+    outline: 3px solid #79384E;
+    outline-offset: 3px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 20px 32px;
+    background-color: #f3e8e5;
+    font-size: 0.8rem;
+    color: #7a6a70;
+}

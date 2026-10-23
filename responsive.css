@@ -1,12 +1,30 @@
-@media screen and (max-width : 767px){
+@media screen and (max-width: 767px) {
     header > p {
         padding: 10px;
         font-size: 15px;
     }
-    nav {
+    header nav {
         display: none;
     }
     .barre {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: auto 1fr auto ;
+    }
+    .logo {
+        font-size: 26px;
+    }
+    .produit {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 16px;
+    }
+    .info {
+        padding: 20px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .cartes {
+        grid-template-columns: 1fr;
     }
 }
