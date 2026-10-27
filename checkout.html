@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chez-NUANCE</title>
     <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/maquillage.png">
 </head>
 
@@ -29,89 +30,144 @@
         <p>
             Vérifiez votre panier, remplissez vos informations et confirmez votre achat en toute sécurité.
         </p>
-        <section class="partie_gauche">
-            <div class="panier">
-                <h2>Mon panier</h2>
-                <p> 4 produits dans votre panier</p>
-                <div id="liste-produits"></div>
-            </div>
-            <div class="ajoute_produit">
-                <h2>Ajouter un autre produit</h2>
-                <p>Rechercher un produit et ajoutez-le à votre panier</p>
-                <label for="recherche-produit">
-                    Rechercher un produit
-                </label>
-                <input type="search" id="recherche-produit" name="recherche-produit" placeholder="Nom du produit...">
-                <div id="resultats-recherche">
-                    <!-- Les résultats seront affichés ici -->
+        <div class="checkout-container">
+            <section class="partie_gauche">
+                <div class="panier">
+                    <h2>Mon panier</h2>
+                    <p> 4 produits dans votre panier</p>
+                    <div id="liste-produits">
+                        <article class="produit">
+                            <img src="images/images (2).jpg" alt="Fond de Teint Mat">
+                            <div class="info-produit">
+                                <h3>Fond de Teint Mat</h3>
+                                <p>Teinte : Beige Clair</p>
+                                <p class="prix-produit">25,00 DH</p>
+                            </div>
+                            <div class="quantite">
+                                <button type="button" aria-label="Diminuer la quantité">-</button>
+                                <span>1</span>
+                                <button type="button" aria-label="Augmenter la quantité">+</button>
+                            </div>
+                            <button type="button" class="supprimer">Supprimer</button>
+                        </article>
+                        <!-- Produit 2 : Rouge à Lèvres -->
+                        <article class="produit">
+                            <img src="images/yves-saint-laurent-rouge-pur-couture-rouge-a-levres-fini-satin.jpg" alt="Rouge à Lèvres Velours Rouge Intense">
+
+                            <div class="info-produit">
+                                <h3>Rouge à Lèvres Velours</h3>
+                                <p>Teinte : Rouge Intense</p>
+                                <p class="prix-produit">18,50 DH</p>
+                            </div>
+
+                            <div class="quantite">
+                                <button type="button" aria-label="Diminuer la quantité">-</button>
+                                <span>2</span>
+                                <button type="button" aria-label="Augmenter la quantité">+</button>
+                            </div>
+
+                            <button type="button" class="supprimer">Supprimer</button>
+                        </article>
+
+                        <!-- Produit 3 : Set de pinceaux -->
+                        <article class="produit">
+                            <img src="images/pinceux0.jpg" alt="Set de 5 Pinceaux Pro">
+
+                            <div class="info-produit">
+                                <h3>Set de 5 Pinceaux Pro</h3>
+                                <p>Teinte : N/A</p>
+                                <p class="prix-produit">28,00 DH</p>
+                            </div>
+
+                            <div class="quantite">
+                                <button type="button" aria-label="Diminuer la quantité">-</button>
+                                <span>1</span>
+                                <button type="button" aria-label="Augmenter la quantité">+</button>
+                            </div>
+
+                            <button type="button" class="supprimer">Supprimer</button>
+                        </article>
+
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="partie_droite">
-            <div class="information">
-                <h2>Informations de paiement</h2>
-                <form id="formulaire-paiement">
-
-                    <div class="champ">
-                        <label for="nom">Nom *</label>
-                        <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+                <div class="ajoute_produit">
+                    <h2>Ajouter un autre produit</h2>
+                    <p>Rechercher un produit et ajoutez-le à votre panier</p>
+                    <label for="recherche-produit"> Rechercher un produit </label>
+                    <input type="search" id="recherche-produit" name="recherche-produit"
+                        placeholder="Nom du produit...">
+                    <div id="resultats-recherche">
+                        <!-- Les résultats seront affichés ici -->
                     </div>
-
-                    <div class="champ">
-                        <label for="prenom">Prénom *</label>
-                        <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
-                    </div>
-
-                    <div class="champ">
-                        <label for="adresse">Adresse de livraison *</label>
-                        <input type="text" id="adresse" name="adresse" autocomplete="street-address" required>
-                    </div>
-
-                    <div class="champ">
-                        <label for="email">Adresse e-mail *</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required>
-                    </div>
-
-                    <h3>Carte bancaire</h3>
-
-                    <div class="champ">
-                        <label for="numero-carte">Numéro de carte *</label>
-                        <input type="text" id="numero-carte" name="numero-carte" inputmode="numeric"
-                            autocomplete="cc-number" required>
-                    </div>
-
-                    <div class="champ">
-                        <label for="expiration">Date d'expiration *</label>
-                        <input type="text" id="expiration" name="expiration" placeholder="MM/AA" autocomplete="cc-exp"
-                            required>
-                    </div>
-
-                    <div class="champ">
-                        <label for="cvv">CVV *</label>
-                        <input type="password" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc" required>
-                    </div>
-
-                </form>
-            </div>
-            <div class="fin_commande">
-                <h2>Récapitulatif de commande</h2>
-                <div class="ligne-total">
-                    <span>Sous-total</span>
-                    <span id="sous-total">0,00 DH</span>
                 </div>
-                <div class="ligne-total">
-                    <span>Livraison</span>
-                    <span id="frais-livraison">À calculer</span>
+            </section>
+            <section class="partie_droite">
+                <div class="information">
+                    <h2>Informations de paiement</h2>
+                    <form id="formulaire-paiement">
+
+                        <div class="champ">
+                            <label for="nom">Nom *</label>
+                            <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+                        </div>
+
+                        <div class="champ">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+                        </div>
+
+                        <div class="champ">
+                            <label for="adresse">Adresse de livraison *</label>
+                            <input type="text" id="adresse" name="adresse" autocomplete="street-address" required>
+                        </div>
+
+                        <div class="champ">
+                            <label for="email">Adresse e-mail *</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+
+                        <h3>Carte bancaire</h3>
+
+                        <div class="champ">
+                            <label for="numero-carte">Numéro de carte *</label>
+                            <input type="text" id="numero-carte" name="numero-carte" inputmode="numeric"
+                                autocomplete="cc-number" required>
+                        </div>
+
+                        <div class="champ">
+                            <label for="expiration">Date d'expiration *</label>
+                            <input type="text" id="expiration" name="expiration" placeholder="MM/AA"
+                                autocomplete="cc-exp" required>
+                        </div>
+
+                        <div class="champ">
+                            <label for="cvv">CVV *</label>
+                            <input type="password" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc"
+                                required>
+                        </div>
+
+                    </form>
                 </div>
-                <div class="ligne-total">
-                    <strong>Total à payer</strong>
-                    <strong id="prix-total">0,00 DH</strong>
+                <div class="fin_commande">
+                    <h2>Récapitulatif de commande</h2>
+                    <div class="ligne-total">
+                        <span>Sous-total</span>
+                        <span id="sous-total">0,00 DH</span>
+                    </div>
+                    <div class="ligne-total">
+                        <span>Livraison</span>
+                        <span id="frais-livraison">À calculer</span>
+                    </div>
+                    <div class="ligne-total">
+                        <strong>Total à payer</strong>
+                        <strong id="prix-total">0,00 DH</strong>
+                    </div>
+                    <button type="submit" form="formulaire-paiement">
+                        Confirmer la commande
+                    </button>
                 </div>
-                <button type="submit" form="formulaire-paiement">
-                    Confirmer la commande
-                </button>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 </body>
 
