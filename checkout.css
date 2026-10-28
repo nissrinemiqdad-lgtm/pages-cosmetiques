@@ -195,11 +195,10 @@ main {
 
 .produit {
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
     gap: 15px;
     padding: 15px 0;
     border-bottom: 1px solid ;
-    flex-wrap: wrap ;
 }
 
 .partie_gauche,
@@ -207,10 +206,9 @@ main {
     min-width: 0;
 }
 
-.produit img {
+.image_produit{
     width: 100px;
     height: 110px;
-    object-fit: contain;
     flex-shrink: 0;
 }
 
@@ -245,15 +243,5 @@ main {
     border: 1px solid #d9c6cd;
     border-radius: 6px;
     background-color: white;
-    color: #342029;
-    cursor: pointer;
-}
-
-.supprimer {
-    padding: 7px 10px;
-    border: 1px solid #d9c6cd;
-    border-radius: 6px;
-    background-color: white;
-    color: #79384E;
     cursor: pointer;
 }

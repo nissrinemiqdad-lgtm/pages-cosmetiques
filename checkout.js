@@ -23,26 +23,53 @@ let makeupCart = [
 
 const list = document.getElementById('liste-produits')
 
-// console.log(list)
-// function classement (tag , ClassName , Text ){
-//     const creation = createElement(tag)
-//     if(ClassName){
-//         creation.className = ClassName
-//     }
-// }
+function creation (tag , ClassName , Text ){
+    const element =document.createElement(tag)
+    if(ClassName){
+        element.className = ClassName
+    }
+    if(Text !== undefined && Text !== null){
+        element.textContent = Text
+    }
+    return element ;
+}
 
-
-
-
-
-
-// const image = document.createElement('img')
-// image.className = 'nesseran' ;
-
-// list.appendChild(image)
-
-
-// makeupCart.forEach(objet => {
-
+function creation_card(objet){
+    const cart = creation('article' , 'produit') ;
+    const image = creation('img' , 'image_produit');
+    image.src ='images/' + objet.image  ;
+    image.alt = objet.name;
     
-// });
+    const division = creation('div' , 'info_produit');
+    const h3 = creation('h3' , 'titre' , objet.name);
+    const p = creation('p' , 'paragraphe' , objet.shade);
+    const prix = creation('p' , 'prix-total' , objet.price.toFixed(2) + " DH");
+    const divisionn = creation('div' , 'quantite');
+    const button = creation('button' , 'diminue_quantite' , '-');
+    button.type = "button" ;
+    const span_ = creation('span' , 'span___' , objet.quantity);
+    const buttonn = creation('button' , 'augmente_quantite' , "+");
+    button.type = "button" ;
+    division.appendChild(h3);
+    division.appendChild(p);
+    division.appendChild(prix);
+    divisionn.appendChild(button);
+    divisionn.appendChild(span_);
+    divisionn.appendChild(buttonn);
+    cart.appendChild(image);
+    cart.appendChild(division);
+    cart.appendChild(divisionn);
+    return cart ;
+
+}
+
+function affichage(){
+    list.innerHTML="";
+    for(let objet in makeupCart){
+        const objet_cart = makeupCart[objet] ;
+        const objetCart = creation_card(objet_cart);
+
+        list.appendChild(objetCart);
+    }
+}
+affichage()
