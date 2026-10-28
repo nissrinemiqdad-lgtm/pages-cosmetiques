@@ -1,3 +1,4 @@
+
 // 1. Le tableau global (Catalogue complet incluant les accessoires)
 const makeupProducts = [
   { id: "m1", name: "Fond de Teint Mat", category: "Visage", shade: "Beige Clair", price: 25.00, image: "foundation1.jpg" },
@@ -14,8 +15,34 @@ const makeupProducts = [
 
 // 2. Le tableau des produits dans le panier par défaut (avec des accessoires)
 let makeupCart = [
-  { id: "m1", name: "Fond de Teint Mat", shade: "Beige Clair", price: 25.00, quantity: 1, image: "foundation1.jpg" },
-  { id: "m2", name: "Rouge à Lèvres Velours", shade: "Rouge Intense", price: 18.50, quantity: 2, image: "lipstick-red.jpg" },
-  { id: "m7", name: "Set de 5 Pinceaux Pro", shade: "N/A", price: 28.00, quantity: 1, image: "brushes.jpg" },
-  { id: "m8", name: "Éponge Beauty Blender", shade: "Rose", price: 8.50, quantity: 2, image: "blender.jpg" }
+  { id: "m1", name: "Fond de Teint Mat", shade: "Beige Clair", price: 25.00, quantity: 1, image: "fondation.jpg" },
+  { id: "m2", name: "Rouge à Lèvres Velours", shade: "Rouge Intense", price: 18.50, quantity: 2, image: "rouge.jpg" },
+  { id: "m7", name: "Set de 5 Pinceaux Pro", shade: "N/A", price: 28.00, quantity: 1, image: "blend.jpg" },
+  { id: "m8", name: "Éponge Beauty Blender", shade: "Rose", price: 8.50, quantity: 2, image: "pinceaux.jpg" }
 ];
+
+const list = document.getElementById('liste-produits')
+
+// console.log(list)
+// function classement (tag , ClassName , Text ){
+//     const creation = createElement(tag)
+//     if(ClassName){
+//         creation.className = ClassName
+//     }
+// }
+
+
+
+
+
+
+// const image = document.createElement('img')
+// image.className = 'nesseran' ;
+
+// list.appendChild(image)
+
+
+// makeupCart.forEach(objet => {
+
+    
+// });
