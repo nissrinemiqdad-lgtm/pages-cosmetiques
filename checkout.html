@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez-NUANCE</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/maquillage.png">
+</head>
+
+<body>
+    <header>
+        <p>Votre beauté, vos règles. Composez votre essentiel.</p>
+        <div class="barre">
+            <span class="logo">NUANCE</span>
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#">Le studio</a></li>
+                    <li><a href="#">Notre philosophie</a></li>
+                    <li><a href="#">Besoin d'aide ?</a></li>
+                </ul>
+            </nav>
+            <img class="panier" src="images/Panier.png" alt="panier">
+        </div>
+    </header>
+    <main>
+        <h1>Finaliser ma commande</h1>
+        <p>
+            Vérifiez votre panier, remplissez vos informations et confirmez votre achat en toute sécurité.
+        </p>
+        <div class="checkout-container">
+            <section class="partie_gauche">
+                <div class="panier">
+                    <h2>Mon panier</h2>
+                    <p> 4 produits dans votre panier</p>
+                    <div id="liste-produits">
+                        <!-- les produits affiche ici  -->
+                    </div>
+                </div>
+                <div class="ajoute_produit">
+                    <h2>Ajouter un autre produit</h2>
+                    <p>Rechercher un produit et ajoutez-le à votre panier</p>
+                    <label for="recherche-produit"> Rechercher un produit </label>
+                    <input type="search" id="recherche-produit" name="recherche-produit" >
+                    <div id="resultats-recherche">
+                    
+                    </div>
+                </div>
+            </section>
+            <section class="partie_droite">
+                <div class="information">
+                    <h2>Informations de paiement</h2>
+                    <form id="formulaire-paiement">
+
+                        <div class="champ">
+                            <label for="nom">Nom *</label>
+                            <input type="text" id="nom" >
+                        </div>
+
+                        <div class="champ">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" >
+                        </div>
+
+                        <div class="champ">
+                            <label for="adresse">Adresse de livraison *</label>
+                            <input type="text" id="adresse" >
+                        </div>
+
+                        <div class="champ">
+                            <label for="email">Adresse e-mail *</label>
+                            <input type="email" id="email">
+                        </div>
+
+                        <h3>Carte bancaire</h3>
+
+                        <div class="champ">
+                            <label for="numero-carte">Numéro de carte *</label>
+                            <input type="text" id="numero-carte" >
+                        </div>
+
+                        <div class="champ">
+                            <label for="expiration">Date d'expiration *</label>
+                            <input type="text" id="expiration" >
+                        </div>
+
+                        <div class="champ">
+                            <label for="cvv">CVV*</label>
+                            <input type="password" id="cvv" >
+                        </div>
+
+                    </form>
+                </div>
+                <div class="fin_commande">
+                    <h2>Récapitulatif de commande</h2>
+                    <div class="ligne-total">
+                        <span>Sous-total</span>
+                        <span id="sous-total">0,00 DH</span>
+                    </div>
+                    <div class="ligne-total">
+                        <span>Livraison</span>
+                        <span id="frais-livraison">25,00 DH</span>
+                    </div>
+                    <div class="ligne-total">
+                        <strong>Total à payer</strong>
+                        <strong id="prix-total">0,00 DH</strong>
+                    </div>
+                    <button type="submit" form="formulaire-paiement">
+                        Confirmer la commande
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="checkout.js"></script>
+</body>
+</html>
