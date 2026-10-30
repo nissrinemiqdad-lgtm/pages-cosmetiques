@@ -92,7 +92,6 @@ function affichage() {
     calculTotal()
 }
 
-
 const rechercher = document.getElementById("recherche-produit")
 const resultat = document.getElementById("resultats-recherche")
 
