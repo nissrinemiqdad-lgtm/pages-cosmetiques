@@ -9,7 +9,7 @@ const makeupProducts = [
     { id: "m6", name: "Blush Poudre", category: "Visage", shade: "Pêche", price: 20.00, image: "blush.jpg" },
     { id: "m7", name: "Set de 5 Pinceaux Pro", category: "Accessoire", shade: "N/A", price: 28.00, image: "pinceaux5.jpg" },
     { id: "m8", name: "Éponge Beauty Blender", category: "Accessoire", shade: "Rose", price: 8.50, image: "blender.jpg" },
-    { id: "m9", name: "Trousse de Voyage", category: "Accessoire", shade: "Noir", price: 16.00, image: "bag.jpg" },
+    { id: "m9", name: "Trousse de Voyage", category: "Accessoire", shade: "Noir", price: 16.00, image: "trousse.jpg" },
     { id: "m10", name: "Recourbe-cils Précision", category: "Accessoire", shade: "Métal", price: 12.00, image: "curler.jpg" }
 ];
 
@@ -177,7 +177,6 @@ function ajouterAuPanier(produit) {
         produitExistant.quantity++;
     } else {
         makeupCart.push({
-
             id: produit.id,
             name: produit.name,
             category: produit.category,
