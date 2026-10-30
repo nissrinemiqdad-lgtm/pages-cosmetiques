@@ -43,10 +43,9 @@
                     <h2>Ajouter un autre produit</h2>
                     <p>Rechercher un produit et ajoutez-le à votre panier</p>
                     <label for="recherche-produit"> Rechercher un produit </label>
-                    <input type="search" id="recherche-produit" name="recherche-produit"
-                        placeholder="Nom du produit...">
+                    <input type="search" id="recherche-produit" name="recherche-produit" >
                     <div id="resultats-recherche">
-                        <!-- Les résultats seront affichés ici -->
+                    
                     </div>
                 </div>
             </section>
@@ -57,42 +56,39 @@
 
                         <div class="champ">
                             <label for="nom">Nom *</label>
-                            <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+                            <input type="text" id="nom" >
                         </div>
 
                         <div class="champ">
                             <label for="prenom">Prénom *</label>
-                            <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+                            <input type="text" id="prenom" >
                         </div>
 
                         <div class="champ">
                             <label for="adresse">Adresse de livraison *</label>
-                            <input type="text" id="adresse" name="adresse" autocomplete="street-address" required>
+                            <input type="text" id="adresse" >
                         </div>
 
                         <div class="champ">
                             <label for="email">Adresse e-mail *</label>
-                            <input type="email" id="email" name="email" autocomplete="email" required>
+                            <input type="email" id="email">
                         </div>
 
                         <h3>Carte bancaire</h3>
 
                         <div class="champ">
                             <label for="numero-carte">Numéro de carte *</label>
-                            <input type="text" id="numero-carte" name="numero-carte" inputmode="numeric"
-                                autocomplete="cc-number" required>
+                            <input type="text" id="numero-carte" >
                         </div>
 
                         <div class="champ">
                             <label for="expiration">Date d'expiration *</label>
-                            <input type="text" id="expiration" name="expiration" placeholder="MM/AA"
-                                autocomplete="cc-exp" required>
+                            <input type="text" id="expiration" >
                         </div>
 
                         <div class="champ">
-                            <label for="cvv">CVV *</label>
-                            <input type="password" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc"
-                                required>
+                            <label for="cvv">CVV*</label>
+                            <input type="password" id="cvv" >
                         </div>
 
                     </form>
@@ -105,7 +101,7 @@
                     </div>
                     <div class="ligne-total">
                         <span>Livraison</span>
-                        <span id="frais-livraison">À calculer</span>
+                        <span id="frais-livraison">25,00 DH</span>
                     </div>
                     <div class="ligne-total">
                         <strong>Total à payer</strong>
@@ -120,5 +116,4 @@
     </main>
     <script src="checkout.js"></script>
 </body>
-
 </html>

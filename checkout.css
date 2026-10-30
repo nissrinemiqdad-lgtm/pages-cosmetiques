@@ -62,7 +62,6 @@ main > p {
 }
 body {
     font-family: Arial, sans-serif;
-    color: #342029;
     background-color: #f3e8e5;
 }
 main {
@@ -209,7 +208,6 @@ main {
 .image_produit{
     width: 100px;
     height: 110px;
-    flex-shrink: 0;
 }
 
 .info-produit {
@@ -226,9 +224,9 @@ main {
     margin-bottom: 5px;
 }
 
-.prix-produit {
+.prix-total {
     font-weight: bold;
-    color: #79384E !important;
+    color: #79384E ;
 }
 
 .quantite {
@@ -243,5 +241,51 @@ main {
     border: 1px solid #d9c6cd;
     border-radius: 6px;
     background-color: white;
+    cursor: pointer;
+}
+#resultats-recherche {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.resultat-produit {
+    display: grid ;
+    grid-template-columns : 1fr ; 1fr ;
+    grid-template-row : 1fr ; 1fr ;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #eadde1;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.resultat-produit img {
+    width: 75px;
+    height: 85px;
+    border-radius: 8px;
+}
+
+.info-resultat {
+    flex: 1;
+}
+
+.info-resultat h3 {
+    font-size: 14px;
+    color: #342029;
+}
+
+.info-resultat p {
+    font-size: 13px solid ;
+    margin: 5px 0;
+}
+
+.resultat-produit button {
+    background-color: #79384E;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 7px;
     cursor: pointer;
 }
