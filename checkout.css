@@ -62,7 +62,6 @@ main > p {
 }
 body {
     font-family: Arial, sans-serif;
-    color: #342029;
     background-color: #f3e8e5;
 }
 main {
@@ -209,7 +208,6 @@ main {
 .image_produit{
     width: 100px;
     height: 110px;
-    flex-shrink: 0;
 }
 
 .info-produit {
@@ -226,9 +224,9 @@ main {
     margin-bottom: 5px;
 }
 
-.prix-produit {
+.prix-total {
     font-weight: bold;
-    color: #79384E !important;
+    color: #79384E ;
 }
 
 .quantite {
