@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    background-color: #f3e8e5;
+}
+
+.slogan {
+    background-color: #79384E;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    margin: 0;
+}
+
+header .container-fluid {
+    color: #342029;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.logo {
+    color: #342029;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.progress {
+    flex: 1;
+    height: 3px;
+    background-color: #D9B9C2;
+    margin: 0 10px;
+}
+.stepper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.circle {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #79384E;
+    border-radius: 50%;
+    background-color: white;
+    color: #79384E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.step.active .circle {
+    background-color: #79384E;
+    color: white;
+}
+
+/* .step-progress {
+    flex: 1;
+    height: 3px;
+    background-color: #D9B9C2;
+    margin: 0 10px;
+} */
+
+/* .step-progress-bar {
+    width: 40%;
+    height: 100%;
+    background-color: #79384E;
+} */

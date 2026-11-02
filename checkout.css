@@ -173,6 +173,7 @@ main {
     border-radius: 8px;
     font-size: 15px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .fin_commande button:hover {
@@ -253,7 +254,6 @@ main {
 .resultat-produit {
     display: grid ;
     grid-template-columns : 1fr  1fr ;
-    grid-template-row : 1fr 1fr ;
     gap: 10px;
     padding: 20px;
     border: 1px solid #eadde1;
