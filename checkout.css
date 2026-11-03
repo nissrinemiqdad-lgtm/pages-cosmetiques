@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-header>p {
+
+header > p {
     background-color: #79384E;
     width: 100%;
     padding: 12px;

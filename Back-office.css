@@ -23,7 +23,7 @@ header .container-fluid {
 
 .progress {
     flex: 1;
-    height: 3px;
+    height: 7px;
     background-color: #D9B9C2;
     margin: 0 10px;
 }
@@ -46,22 +46,24 @@ header .container-fluid {
     color: white;
 }
 
-.sidebar {
-    width: 250px;
-    min-height: 100vh;
-    background-color: #79384E;
-    color: white;
-    flex-shrink: 0;
-}
-
-.contenu-principal {
-    min-width: 0;
-    padding: 30px;
-    background-color: #F3E8E5;
-}
-
 .progress-bar {
     width: 10%;
     height: 100%;
-    background-color: #79384E !important;
+    background-color: #79384E ;
+}
+.sidebar {
+    width: 68px;
+    min-width: 68px;
+    min-height: 100vh;
+    background-color: #79384E;
+    border-right: 1px solid #D9B9C2;
+}
+.sidebar .nav-link {
+    color: white;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }

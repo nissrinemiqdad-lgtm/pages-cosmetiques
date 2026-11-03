@@ -188,8 +188,6 @@ function ajouterAuPanier(produit) {
     affichage();
 }
 
-
-
 const total = document.getElementById("sous-total")
 function calculTotal() {
     let somme = 0
