@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Back-office.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/maquillage.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 </head>
 
@@ -24,14 +25,14 @@
         <aside class="sidebar">
             <nav>
                 <a href="#"
-                    class="d-flex align-items-center mb-3 link-body-emphasis text-white text-decoration-none fs-5 fw-semibold"><i class="bi bi-hexagon-half me-2"></i>NUACE</a>
+                    class="d-flex align-items-center mb-3 link-body-emphasis text-white text-decoration-none fs-5 fw-semibold"><i class="bi bi-hexagon-half me-2"></i>Les pages précédents</a>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item"><a class="nav-link  text-white " aria-current="page" href="checkout.html"><i class="bi bi-speedometer2 me-2"></i>Commandes</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="configurateur.html"><i class="bi bi-cart me-2"></i>Produit</a></li>
                 </ul>
             </nav>
         </aside>
-        
+
         <main class="container my-5">
 
             <div class="text-center mb-5">
@@ -40,9 +41,10 @@
                     Ajoutez un nouveau produit à votre catalogue NUANCE.
                 </p>
             </div>
-            <div class="stepper">
 
-                <div class="step active">
+            <div class="stepper d-flex align-items-center w-100 my-5">
+
+                <div class="step d-flex flex-column align-items-center gap-2 active">
                     <div class="circle">1</div>
                     <span>Informations générales</span>
                 </div>
@@ -51,7 +53,7 @@
                     <div class="progress-bar"></div>
                 </div>
 
-                <div class="step">
+                <div class="step d-flex flex-column align-items-center gap-2">
                     <div class="circle">2</div>
                     <span>Options</span>
                 </div>
@@ -60,100 +62,218 @@
                     <div class="progress-bar"></div>
                 </div>
 
-                <div class="step">
+                <div class="step d-flex flex-column align-items-center gap-2">
                     <div class="circle">3</div>
                     <span>Récapitulatif</span>
                 </div>
 
             </div>
-            <div class="card shadow-sm p-4">
-                <h2 class="h4 mb-4">Informations générales</h2>
+            <form id="form-produit">
+                <section id="etape-1" class="etape-formulaire">
+                    <div class="card shadow-sm p-4">
+                        <h2 class="h4 mb-4">Informations générales</h2>
 
-                <form id="form-produit">
 
-                    <div class="mb-3">
-                        <label for="nom-produit" class="form-label">
-                            Nom du produit
-                        </label>
-                        <input type="text" id="nom-produit" class="form-control" placeholder="Ex : Rouge à lèvres nude">
+
+                        <div class="mb-3">
+                            <label for="nom-produit" class="form-label">
+                                Nom du produit
+                            </label>
+                            <input type="text" id="nom-produit" class="form-control"
+                                placeholder="Ex : Rouge à lèvres nude">
+                        </div>
+                        <div class="mb-3">
+                            <label for="type-produit" class="form-label">
+                                Type de produit
+                            </label>
+                            <select id="type-produit" class="form-select">
+                                <option value="">Choisir une catégorie</option>
+                                <option value="rouge">Rouge à lèvres</option>
+                                <option value="fond">Fond de teint</option>
+                                <option value="fard">Fard à paupières</option>
+                                <option value="mascara">Mascara</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="prix" class="form-label">Prix de base (DH)</label>
+                            <input type="number" id="prix" class="form-control" min="0" step="0.01">
+                        </div>
+
+
+                        <!-- Description -->
+                        <div class="mb-3">
+                            <label for="description" class="form-label">
+                                Description du produit
+                            </label>
+
+                            <textarea id="description" class="form-control" rows="4"
+                                placeholder="Décrivez votre produit..."></textarea>
+                        </div>
+
+                        <!-- Image -->
+                        <div class="mb-3">
+                            <label for="image" class="form-label">
+                                URL de l'image
+                            </label>
+
+                            <input type="url" id="image" class="form-control"
+                                placeholder="https://exemple.com/image.jpg">
+                        </div>
+
+                        <!-- Promotion -->
+                        <div class="form-check mb-3">
+                            <input type="checkbox" id="promotion" class="form-check-input">
+
+                            <label for="promotion" class="form-check-label">
+                                Activer une promotion
+                            </label>
+                        </div>
+                        <!-- Informations promotionnelles -->
+                        <div id="informations-promotion" class="mb-3">
+
+                            <label for="reduction" class="form-label">
+                                Pourcentage de réduction (%)
+                            </label>
+
+                            <input type="number" id="reduction" class="form-control" min="1" max="100">
+
+                            <label for="date-fin" class="form-label mt-3">
+                                Date de fin de promotion
+                            </label>
+
+                            <input type="date" id="date-fin" class="form-control">
+
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+
+                            <button type="reset" class="btn btn-outline-secondary">
+                                Annuler
+                            </button>
+
+                            <button type="button" class="btn btn-primary">
+                                Suivant →
+                            </button>
+                        </div>
+
                     </div>
-                    <div class="mb-3">
-                        <label for="type-produit" class="form-label">
-                            Type de produit
-                        </label>
-                        <select id="type-produit" class="form-select">
-                            <option value="">Choisir une catégorie</option>
-                            <option value="rouge">Rouge à lèvres</option>
-                            <option value="fond">Fond de teint</option>
-                            <option value="fard">Fard à paupières</option>
-                            <option value="mascara">Mascara</option>
-                        </select>
+                </section>
+                <section id="etape-2" class="etape-formulaire">
+
+                    <h2>Options du produit</h2>
+                    <p>Personnalisez les caractéristiques de votre produit.</p>
+
+                    <!-- 1. Fini du produit -->
+                    <div class="mb-4">
+                        <h3>Fini du produit</h3>
+
+                        <div>
+                            <input type="radio" id="mat" name="fini" value="Mat">
+                            <label for="mat">Mat</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="brillant" name="fini" value="Brillant">
+                            <label for="brillant">Brillant</label>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="prix" class="form-label">Prix de base (DH)</label>
-                        <input type="number" id="prix" class="form-control" min="0" step="0.01">
+                    <!-- 2. Teintes -->
+                    <div class="mb-4">
+                        <h3>Teintes disponibles</h3>
+
+                        <div id="liste-teintes">
+
+                            <div class="teinte-item d-flex gap-2 mb-3">
+                                <input type="color" class="form-control form-control-color" name="couleur"
+                                    value="#C68642">
+
+                                <input type="text" class="form-control" name="nom-teinte"
+                                    placeholder="Nom de la teinte">
+
+                                <button type="button" class="btn btn-outline-danger">
+                                    Supprimer
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <button type="button" id="ajouter-teinte" class="btn btn-outline-secondary">
+                            + Ajouter une teinte
+                        </button>
                     </div>
 
-                </form>
-                <!-- Description -->
-                <div class="mb-3">
-                    <label for="description" class="form-label">
-                        Description du produit
-                    </label>
+                    <!-- 3. Types de peau -->
+                    <div class="mb-4">
+                        <h3>Types de peau compatibles</h3>
 
-                    <textarea id="description" class="form-control" rows="4"
-                        placeholder="Décrivez votre produit..."></textarea>
-                </div>
+                        <div>
+                            <input type="checkbox" id="peau-seche" name="type-peau" value="Sèche">
+                            <label for="peau-seche">Peau sèche</label>
+                        </div>
 
-                <!-- Image -->
-                <div class="mb-3">
-                    <label for="image" class="form-label">
-                        URL de l'image
-                    </label>
+                        <div>
+                            <input type="checkbox" id="peau-grasse" name="type-peau" value="Grasse">
+                            <label for="peau-grasse">Peau grasse</label>
+                        </div>
 
-                    <input type="url" id="image" class="form-control" placeholder="https://exemple.com/image.jpg">
-                </div>
+                        <div>
+                            <input type="checkbox" id="peau-mixte" name="type-peau" value="Mixte">
+                            <label for="peau-mixte">Peau mixte</label>
+                        </div>
 
-                <!-- Promotion -->
-                <div class="form-check mb-3">
-                    <input type="checkbox" id="promotion" class="form-check-input">
+                        <div>
+                            <input type="checkbox" id="peau-sensible" name="type-peau" value="Sensible">
+                            <label for="peau-sensible">Peau sensible</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="button" id="precedent" class="btn btn-outline-secondary">
+                            Précédent
+                        </button>
 
-                    <label for="promotion" class="form-check-label">
-                        Activer une promotion
-                    </label>
-                </div>
+                        <button type="button" id="suivant" class="btn btn-primary">
+                            Suivant
+                        </button>
+                    </div>
 
-                <!-- Informations promotionnelles -->
-                <div id="informations-promotion" class="mb-3">
+                </section>
+                <section id="etape-3" class="etape-formulaire">
 
-                    <label for="reduction" class="form-label">
-                        Pourcentage de réduction (%)
-                    </label>
+                    <div class="card shadow-sm p-4">
 
-                    <input type="number" id="reduction" class="form-control" min="1" max="100">
+                        <h2 class="h4 mb-4">Récapitulatif du produit</h2>
 
-                    <label for="date-fin" class="form-label mt-3">
-                        Date de fin de promotion
-                    </label>
+                        <p class="text-muted">
+                            Vérifiez les informations avant de créer votre produit.
+                        </p>
 
-                    <input type="date" id="date-fin" class="form-control">
+                        <div id="resume-produit">
 
-                </div>
-                <div class="d-flex justify-content-between mt-4">
+                            <!-- L'aperçu du produit sera affiché ici -->
 
-                    <button type="reset" class="btn btn-outline-secondary">
-                        Annuler
-                    </button>
+                        </div>
 
-                    <button type="button" class="btn btn-primary">
-                        Suivant →
-                    </button>
+                        <div class="d-flex justify-content-between mt-4">
 
-                </div>
-            </div>
+                            <button type="button" id="precedent-etape-3" class="btn btn-outline-secondary">
+                                Précédent
+                            </button>
 
+                            <button type="submit" id="creer-produit" class="btn btn-primary">
+                                Créer le produit
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+            </form>
         </main>
     </div>
+
+
+
     <script src="Back-office.js"></script>
 </body>
