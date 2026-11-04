@@ -145,23 +145,23 @@
                             </label>
                         </div>
                         <!-- Informations promotionnelles -->
-                        <div id="informations-promotion" class="mb-3">
+                        <div id="informations-promotion" class="mb-3 d-none">
 
                             <label for="reduction" class="form-label">
                                 Pourcentage de réduction (%)
                             </label>
-
                             <input type="number" id="reduction" class="form-control" min="1" max="100">
+                            <small id="erreur-reduction" class="d-block mb-3"></small>
+
 
                             <label for="date-fin" class="form-label mt-3">
                                 Date de fin de promotion
                             </label>
-
                             <input type="date" id="date-fin" class="form-control">
+                            <small id="erreur-date" class="d-block"></small>
 
                         </div>
                         <div class="d-flex justify-content-between mt-4">
-
                             <a href="configurateur.html"><button type="reset" class="btn btn-outline-secondary">
                                     Annuler
                                 </button></a>

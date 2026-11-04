@@ -16,6 +16,12 @@ const progress2 = document.querySelector("#progress-2");
 const cercle2 = document.querySelector("#circle-2");
 const cercle3 = document.querySelector("#circle-3");
 const steps = document.querySelectorAll(".step");
+const promo = document.querySelector("#promotion");
+const reduction = document.querySelector("#reduction");
+const dateFin = document.querySelector("#date-fin");
+const informationsPromotion = document.querySelector("#informations-promotion");
+const errorReduction = document.querySelector("#erreur-reduction");
+const errorDate = document.querySelector("#erreur-date");
 
 //  Regex utilisée :
 const regexNom = /^[A-Z][^0-9=/+*#@&$]*$/;
@@ -27,66 +33,51 @@ const errorNom = document.getElementById("erreur-nom");
 const errorPrix = document.getElementById("erreur-prix");
 const errorImage = document.getElementById("erreur-image");
 const erreur_description = document.getElementById("erreur-description");
-const valeurNom = NomProduit.value;
-const valeurPrix = PrixProduit.value;
-
+// const valeurNom = NomProduit.value;
+// const valeurPrix = PrixProduit.value;
 
 // validation Nom (function) :
 function validationNom() {
-    if (!regexNom.test(valeurNom)) {
+    if (!regexNom.test(NomProduit.value)) {
         errorNom.textContent = "Le nom est invalid";
         errorNom.style.color = "red";
         NomProduit.style.border = "2px solid red"
-        Swal.fire({
-            title: 'Error!',
-            text: 'entrez le Nom puis réessayer',
-            icon: 'error',
-            confirmButtonText: 'OK'
-        })
-        return;
+        return false;
     }
     else {
         errorNom.textContent = "";
         NomProduit.style.border = "2px solid green"
+        return true;
     }
 
 }
 
 // validation prix (fucntion) :
 function validationPrix() {
-    if (!regexPrix.test(valeurPrix)) {
+    if (!regexPrix.test(PrixProduit.value)) {
         errorPrix.textContent = "le prix est invalid"
         errorPrix.style.color = "red"
         PrixProduit.style.border = "2px solid red"
-        Swal.fire({
-            title: 'Error!',
-            text: 'entrez le prix puis réessayer',
-            icon: 'error',
-            confirmButtonText: 'OK'
-        })
-        return;
+        return false;
     } else {
         errorPrix.textContent = ""
         PrixProduit.style.border = "2px solid green"
+        return true;
     }
 }
 
 // validation description (function):
 function validationDescription() {
     if (!regexDescription.test(description.value)) {
-        Swal.fire({
-            icon: "error",
-            title: "Description invalide",
-            text: "La description doit contenir entre 10 et 300 caractères."
-        });
         erreur_description.textContent = "description invalid"
         erreur_description.style.color = "red"
         description.style.border = "2px solid red"
-        return;
+        return false;
     }
     else {
         erreur_description.textContent = ""
         description.style.border = "2px solid green"
+        return true
 
     }
 }
@@ -94,44 +85,105 @@ function validationDescription() {
 // validation image (function) :
 function validationImage() {
     if (!imageProduit.value.trim()) {
-        Swal.fire({
-            icon: "error",
-            title: "Image obligatoire",
-            text: "Veuillez saisir le lien de l'image."
-        });
         errorImage.textContent = "image obligatoire"
         imageProduit.style.border = "2px solid red"
+        return false;
     }
     else {
         errorImage.textContent = ""
         imageProduit.style.border = "2px solid green"
+        return true;
     }
 }
 
 // validation formulaire (function) : 
-function validationFormulaire (){
-     if (formulaire.checkValidity()) {
-        Swal.fire({
-            icon: "success",
-            title: "Formulaire",
-            text: "Formulaire valid "
-        });
+function validationFormulaire() {
+    if (formulaire.checkValidity()) {
+        return true;
     } else {
-        Swal.fire({
-            icon: "error",
-            title: "Formulaire",
-            text: "Formulaire invalid."
-        });
+        return false;
     }
 }
 
+// validation etapes 1 :
+function validationEtape1() {
+    return (
+        validationNom() &
+        validationPrix() &
+        validationDescription() &
+        validationImage()&
+        validationPromotion()
+    );
+}
+// promotion :
+promo.addEventListener("change", function () {
+
+    if (promo.checked) {
+        informationsPromotion.classList.remove("d-none");
+    } else {
+        informationsPromotion.classList.add("d-none");
+    }
+
+});
+function validationPromotion() {
+
+    let valeurReduction = null;
+    let valeurDateFin = null;
+
+    if (!promo.checked) {
+        return true;
+    }
+
+    valeurReduction = reduction.value;
+    valeurDateFin = dateFin.value;
+    if (valeurReduction === "" || valeurReduction < 1 || valeurReduction > 100) {
+        errorReduction.textContent = "La réduction doit être entre 1 et 100 %";
+        errorReduction.style.color = "red";
+        reduction.style.border = "2px solid red";
+        return false;
+    } else {
+        errorReduction.textContent = "";
+        reduction.style.border = "2px solid green";
+    }
+    const aujourdHui = new Date();
+    const dateChoisie = new Date(valeurDateFin);
+
+    aujourdHui.setHours(0, 0, 0, 0);
+
+    if (valeurDateFin === "" || dateChoisie < aujourdHui) {
+        errorDate.textContent = "Veuillez choisir une date valide";
+        errorDate.style.color = "red";
+        dateFin.style.border = "2px solid red";
+        return false;
+    } else {
+        errorDate.textContent = "";
+        dateFin.style.border = "2px solid green";
+    }
+    return true;
+
+}
+
+
+
 // button etapes  :
 boutonSuivant.addEventListener("click", function () {
-    etape1.classList.add("d-none");
-    etape2.classList.remove("d-none");
 
-    steps[1].classList.add("active");
-    progress1.style.width = "100%";
+    if (validationEtape1()) {
+
+        etape1.classList.add("d-none");
+        etape2.classList.remove("d-none");
+
+        steps[1].classList.add("active");
+        progress1.style.width = "100%";
+
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Formulaire invalide",
+            text: "Veuillez corriger les erreurs avant de continuer."
+        });
+    }
+
 });
 boutonSuivant2.addEventListener("click", function () {
     etape2.classList.add("d-none");
@@ -166,5 +218,5 @@ formulaire.addEventListener("submit", function (event) {
     // validation image : 
     validationImage()
     // Validation générale du formulaire :
-   validationFormulaire()
+    validationFormulaire()
 });
