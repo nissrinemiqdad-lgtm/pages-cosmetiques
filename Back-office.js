@@ -4,7 +4,13 @@ const PrixProduit = document.querySelector("#prix-produit")
 const formulaire = document.querySelector("#form-produit");
 const description = document.getElementById("description");
 const imageProduit = document.getElementById("image-produit");
-
+const etape1 = document.querySelector("#etape-1");
+const etape2 = document.querySelector("#etape-2");
+const etape3 = document.querySelector("#etape-3");
+const boutonSuivant = document.querySelector("#class-suivant-1");
+const boutonSuivant2 = document.querySelector("#class-suivant-2");
+const boutonPrecedent2 = document.querySelector("#precedent-2");
+const boutonPrecedent3 = document.querySelector("#precedent-3")
 
 //  Regex utilisée :
 const regexNom = /^[A-Z][^0-9=/+*#@&$]*$/;
@@ -70,6 +76,7 @@ formulaire.addEventListener("submit", function (event) {
         erreur_description.textContent = "description invalid"
         erreur_description.style.color = "red"
         description.style.border = "2px solid red"
+        return ;
     }
     else {
         erreur_description.textContent = ""
@@ -85,9 +92,9 @@ formulaire.addEventListener("submit", function (event) {
             text: "Veuillez saisir le lien de l'image."
         });
         errorImage.textContent = "image obligatoire"
-        imageProduit.style.border="2px solid red"
+        imageProduit.style.border = "2px solid red"
     }
-    else{
+    else {
         errorImage.textContent = ""
         imageProduit.style.border = "2px solid green"
     }
@@ -99,4 +106,22 @@ formulaire.addEventListener("submit", function (event) {
     } else {
         console.log("Formulaire invalide");
     }
+    
 });
+// button etapes  :
+    boutonSuivant.addEventListener("click", function () {
+        etape1.classList.add("d-none");
+        etape2.classList.remove("d-none");
+    });
+    boutonSuivant2.addEventListener("click", function () {
+        etape2.classList.add("d-none");
+        etape3.classList.remove("d-none");
+    });
+    boutonPrecedent2.addEventListener("click", function () {
+        etape2.classList.add("d-none");
+        etape1.classList.remove("d-none");
+    });
+    boutonPrecedent3.addEventListener("click", function(){
+        etape3.classList.add("d-none");
+        etape2.classList.remove("d-none")
+    })

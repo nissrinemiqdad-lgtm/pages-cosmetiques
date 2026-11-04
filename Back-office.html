@@ -166,94 +166,94 @@
                                     Annuler
                                 </button></a>
 
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" id="class-suivant-1" class="btn btn-primary">
                                 Suivant →
                             </button>
                         </div>
 
                     </div>
                 </section>
-                <section id="etape-2" class="etape-formulaire">
+                <section id="etape-2" class="d-none">
+                    <div class="card shadow-sm p-4">
+                        <h2>Options du produit</h2>
+                        <p>Personnalisez les caractéristiques de votre produit.</p>
 
-                    <h2>Options du produit</h2>
-                    <p>Personnalisez les caractéristiques de votre produit.</p>
+                        <!-- 1. Fini du produit -->
+                        <div class="mb-4">
+                            <h3>Fini du produit</h3>
 
-                    <!-- 1. Fini du produit -->
-                    <div class="mb-4">
-                        <h3>Fini du produit</h3>
-
-                        <div>
-                            <input type="radio" id="mat" name="fini" value="Mat">
-                            <label for="mat">Mat</label>
-                        </div>
-
-                        <div>
-                            <input type="radio" id="brillant" name="fini" value="Brillant">
-                            <label for="brillant">Brillant</label>
-                        </div>
-                    </div>
-
-                    <!-- 2. Teintes -->
-                    <div class="mb-4">
-                        <h3>Teintes disponibles</h3>
-
-                        <div id="liste-teintes">
-
-                            <div class="teinte-item d-flex gap-2 mb-3">
-                                <input type="color" class="form-control form-control-color" name="couleur"
-                                    value="#C68642">
-
-                                <input type="text" class="form-control" name="nom-teinte"
-                                    placeholder="Nom de la teinte">
-
-                                <button type="button" class="btn btn-outline-danger">
-                                    Supprimer
-                                </button>
+                            <div>
+                                <input type="radio" id="mat" name="fini" value="Mat">
+                                <label for="mat">Mat</label>
                             </div>
 
+                            <div>
+                                <input type="radio" id="brillant" name="fini" value="Brillant">
+                                <label for="brillant">Brillant</label>
+                            </div>
                         </div>
 
-                        <button type="button" id="ajouter-teinte" class="btn btn-outline-secondary">
-                            + Ajouter une teinte
-                        </button>
+                        <!-- 2. Teintes -->
+                        <div class="mb-4">
+                            <h3>Teintes disponibles</h3>
+
+                            <div id="liste-teintes">
+
+                                <div class="teinte-item d-flex gap-2 mb-3">
+                                    <input type="color" class="form-control form-control-color" name="couleur"
+                                        value="#C68642">
+
+                                    <input type="text" class="form-control" name="nom-teinte"
+                                        placeholder="Nom de la teinte">
+
+                                    <button type="button" class="btn btn-outline-danger">
+                                        Supprimer
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <button type="button" id="ajouter-teinte" class="btn btn-outline-secondary">
+                                + Ajouter une teinte
+                            </button>
+                        </div>
+
+                        <!-- 3. Types de peau -->
+                        <div class="mb-4">
+                            <h3>Types de peau compatibles</h3>
+
+                            <div>
+                                <input type="checkbox" id="peau-seche" name="type-peau" value="Sèche">
+                                <label for="peau-seche">Peau sèche</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="peau-grasse" name="type-peau" value="Grasse">
+                                <label for="peau-grasse">Peau grasse</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="peau-mixte" name="type-peau" value="Mixte">
+                                <label for="peau-mixte">Peau mixte</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="peau-sensible" name="type-peau" value="Sensible">
+                                <label for="peau-sensible">Peau sensible</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="button" id="precedent-2" class="btn btn-outline-secondary">
+                                Précédent
+                            </button>
+
+                            <button type="button" id="class-suivant-2" class="btn btn-primary">
+                                Suivant →
+                            </button>
+                        </div>
                     </div>
-
-                    <!-- 3. Types de peau -->
-                    <div class="mb-4">
-                        <h3>Types de peau compatibles</h3>
-
-                        <div>
-                            <input type="checkbox" id="peau-seche" name="type-peau" value="Sèche">
-                            <label for="peau-seche">Peau sèche</label>
-                        </div>
-
-                        <div>
-                            <input type="checkbox" id="peau-grasse" name="type-peau" value="Grasse">
-                            <label for="peau-grasse">Peau grasse</label>
-                        </div>
-
-                        <div>
-                            <input type="checkbox" id="peau-mixte" name="type-peau" value="Mixte">
-                            <label for="peau-mixte">Peau mixte</label>
-                        </div>
-
-                        <div>
-                            <input type="checkbox" id="peau-sensible" name="type-peau" value="Sensible">
-                            <label for="peau-sensible">Peau sensible</label>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between mt-4">
-                        <button type="button" id="precedent" class="btn btn-outline-secondary">
-                            Précédent
-                        </button>
-
-                        <button type="button" id="suivant" class="btn btn-primary">
-                            Suivant
-                        </button>
-                    </div>
-
                 </section>
-                <section id="etape-3" class="etape-formulaire">
+                <section id="etape-3" class="d-none">
 
                     <div class="card shadow-sm p-4">
 
@@ -271,7 +271,7 @@
 
                         <div class="d-flex justify-content-between mt-4">
 
-                            <button type="button" id="precedent-etape-3" class="btn btn-outline-secondary">
+                            <button type="button" id="precedent-3" class="btn btn-outline-secondary">
                                 Précédent
                             </button>
 
