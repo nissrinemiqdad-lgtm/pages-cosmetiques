@@ -3,7 +3,6 @@ const NomProduit = document.querySelector("#nom-produit")
 const PrixProduit = document.querySelector("#prix-produit")
 const formulaire = document.querySelector("#form-produit");
 const description = document.getElementById("description");
-const erreur_description = document.getElementById("erreur-description");
 const imageProduit = document.getElementById("image-produit");
 
 
@@ -18,6 +17,8 @@ formulaire.addEventListener("submit", function (event) {
 
     const errorNom = document.getElementById("erreur-nom");
     const errorPrix = document.getElementById("erreur-prix");
+    const errorImage = document.getElementById("erreur-image");
+    const erreur_description = document.getElementById("erreur-description");
     const valeurNom = NomProduit.value;
     const valeurPrix = PrixProduit.value;
 
@@ -83,6 +84,12 @@ formulaire.addEventListener("submit", function (event) {
             title: "Image obligatoire",
             text: "Veuillez saisir le lien de l'image."
         });
+        errorImage.textContent = "image obligatoire"
+        imageProduit.style.border="2px solid red"
+    }
+    else{
+        errorImage.textContent = ""
+        imageProduit.style.border = "2px solid green"
     }
 
     // Validation générale du formulaire :
