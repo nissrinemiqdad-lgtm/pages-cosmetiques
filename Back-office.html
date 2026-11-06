@@ -162,9 +162,9 @@
 
                         </div>
                         <div class="d-flex justify-content-between mt-4">
-                            <a href="configurateur.html"><button type="reset" class="btn btn-outline-secondary">
-                                    Annuler
-                                </button></a>
+                            <button type="reset" class="btn btn-outline-secondary">
+                                Annuler
+                            </button>
 
                             <button type="button" id="class-suivant-1" class="btn btn-primary">
                                 Suivant →
@@ -202,9 +202,9 @@
                                 <div class="teinte-item d-flex gap-2 mb-3">
                                     <input type="color" class="form-control form-control-color" name="couleur"
                                         value="#C68642">
-
                                     <input type="text" class="form-control" name="nom-teinte"
                                         placeholder="Nom de la teinte">
+                                    <small class="erreur-teinte text-danger d-block"></small>
 
                                     <button type="button" class="btn btn-outline-danger">
                                         Supprimer
@@ -241,6 +241,7 @@
                                 <input type="checkbox" id="peau-sensible" name="type-peau" value="Sensible">
                                 <label for="peau-sensible">Peau sensible</label>
                             </div>
+                            <small id="erreur-peau" class="text-danger"></small>
                         </div>
                         <div class="d-flex justify-content-between mt-4">
                             <button type="button" id="precedent-2" class="btn btn-outline-secondary">
