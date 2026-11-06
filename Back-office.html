@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration | Chez-NUANCE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Back-office.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/maquillage.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+
+<body>
+    <header>
+        <p class="slogan">Votre beauté, vos règles. Composez votre essentiel.</p>
+        <div class="container-fluid d-flex justify-content-between align-items-center p-3 ">
+            <span class="logo">NUANCE</span>
+            <p class="mb-0">Espace Administration</p>
+        </div>
+    </header>
+    <div class="admin-layout d-flex">
+        <aside class="sidebar d-flex flex-column align-items-center py-3">
+
+            <!-- Navigation -->
+            <ul class="nav nav-pills flex-column align-items-center gap-2 mb-auto">
+                <!-- Commandes -->
+                <li class="nav-item">
+                    <a class="nav-link " href="checkout.html">
+                        <i class="bi bi-speedometer2 fs-5"></i>
+                    </a>
+                </li>
+
+                <!-- Produits -->
+                <li class="nav-item">
+                    <a class="nav-link" href="configurateur.html">
+                        <i class="bi bi-cart fs-5"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Paramètres -->
+            <a href="#" class="nav-link">
+                <i class="bi bi-gear fs-5"></i>
+            </a>
+
+        </aside>
+
+        <main class="container my-5">
+
+            <div class="text-center mb-5">
+                <h1 class="fw-bold">Création de produit</h1>
+                <p class="text-muted">
+                    Ajoutez un nouveau produit à votre catalogue NUANCE.
+                </p>
+            </div>
+
+            <div class="stepper d-flex align-items-center w-100 my-5">
+
+                <div class="step d-flex flex-column align-items-center gap-2 active">
+                    <div class="circle">1</div>
+                    <span>Informations générales</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="progress-1"></div>
+                </div>
+
+                <div class="step d-flex flex-column align-items-center gap-2">
+                    <div class="circle-2">2</div>
+                    <span>Options</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="progress-2"></div>
+                </div>
+
+                <div class="step d-flex flex-column align-items-center gap-2">
+                    <div class="circle-3">3</div>
+                    <span>Récapitulatif</span>
+                </div>
+
+            </div>
+            <form id="form-produit">
+                <section id="etape-1" class="etape-formulaire">
+                    <div class="card shadow-sm p-4">
+                        <h2 class="h4 mb-4">Informations générales</h2>
+
+                        <div class="mb-3">
+                            <label for="nom-produit" class="form-label">
+                                Nom du produit
+                            </label>
+                            <input type="text" id="nom-produit" class="form-control"
+                                placeholder="Ex : Rouge à lèvres nude">
+                            <small id="erreur-nom"></small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="type-produit" class="form-label">
+                                Type de produit
+                            </label>
+                            <select id="type-produit" class="form-select">
+                                <option value="">Choisir une catégorie</option>
+                                <option value="rouge">Rouge à lèvres</option>
+                                <option value="fond">Fond de teint</option>
+                                <option value="fard">Fard à paupières</option>
+                                <option value="mascara">Mascara</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="prix-produit" class="form-label">Prix de base (DH)</label>
+                            <input type="number" id="prix-produit" class="form-control" min="0" step="0.01">
+                            <small id="erreur-prix"></small>
+                        </div>
+
+
+                        <!-- Description -->
+                        <div class="mb-3">
+                            <label for="description" class="form-label">
+                                Description du produit
+                            </label>
+                            <textarea id="description" class="form-control" rows="4" n
+                                placeholder="Décrivez votre produit..."></textarea>
+                            <small id="erreur-description"></small>
+                        </div>
+
+                        <!-- Image -->
+                        <div class="mb-3">
+                            <label for="image" class="form-label">
+                                URL de l'image
+                            </label>
+                            <input type="url" id="image-produit" class="form-control"
+                                placeholder="https://exemple.com/image.jpg">
+                            <small id="erreur-image"></small>
+                        </div>
+
+                        <!-- Promotion -->
+                        <div class="form-check mb-3">
+                            <input type="checkbox" id="promotion" class="form-check-input">
+
+                            <label for="promotion" class="form-check-label">
+                                Activer une promotion
+                            </label>
+                        </div>
+                        <!-- Informations promotionnelles -->
+                        <div id="informations-promotion" class="mb-3 d-none">
+
+                            <label for="reduction" class="form-label">
+                                Pourcentage de réduction (%)
+                            </label>
+                            <input type="number" id="reduction" class="form-control" min="1" max="100">
+                            <small id="erreur-reduction" class="d-block mb-3"></small>
+
+
+                            <label for="date-fin" class="form-label mt-3">
+                                Date de fin de promotion
+                            </label>
+                            <input type="date" id="date-fin" class="form-control">
+                            <small id="erreur-date" class="d-block"></small>
+
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="reset" class="btn btn-outline-secondary">
+                                Annuler
+                            </button>
+
+                            <button type="button" id="class-suivant-1" class="btn btn-primary">
+                                Suivant →
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+                <section id="etape-2" class="d-none">
+                    <div class="card shadow-sm p-4">
+                        <h2>Options du produit</h2>
+                        <p>Personnalisez les caractéristiques de votre produit.</p>
+
+                        <!-- 1. Fini du produit -->
+                        <div class="mb-4">
+                            <h3>Fini du produit</h3>
+
+                            <div>
+                                <input type="radio" id="mat" name="fini" value="Mat">
+                                <label for="mat">Mat</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="brillant" name="fini" value="Brillant">
+                                <label for="brillant">Brillant</label>
+                            </div>
+                        </div>
+
+                        <!-- 2. Teintes -->
+                        <div class="mb-4">
+                            <h3>Teintes disponibles</h3>
+
+                            <div id="liste-teintes">
+
+                                <div class="teinte-item d-flex gap-2 mb-3">
+                                    <input type="color" class="form-control form-control-color" name="couleur"
+                                        value="#C68642">
+                                    <input type="text" class="form-control" name="nom-teinte"
+                                        placeholder="Nom de la teinte">
+                                    <small class="erreur-teinte text-danger d-block"></small>
+
+                                    <button type="button" class="btn btn-outline-danger">
+                                        Supprimer
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <button type="button" id="ajouter-teinte" class="btn btn-outline-secondary">
+                                + Ajouter une teinte
+                            </button>
+                        </div>
+
+                        <!-- 3. Types de peau -->
+                        <div class="mb-4">
+                            <h3>Types de peau compatibles</h3>
+
+                            <div>
+                                <input type="checkbox" id="peau-seche" name="type-peau" value="Sèche">
+                                <label for="peau-seche">Peau sèche</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="peau-grasse" name="type-peau" value="Grasse">
+                                <label for="peau-grasse">Peau grasse</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="peau-mixte" name="type-peau" value="Mixte">
+                                <label for="peau-mixte">Peau mixte</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="peau-sensible" name="type-peau" value="Sensible">
+                                <label for="peau-sensible">Peau sensible</label>
+                            </div>
+                            <small id="erreur-peau" class="text-danger"></small>
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="button" id="precedent-2" class="btn btn-outline-secondary">
+                                Précédent
+                            </button>
+
+                            <button type="button" id="class-suivant-2" class="btn btn-primary">
+                                Suivant →
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section id="etape-3" class="d-none">
+
+                    <div class="card shadow-sm p-4">
+
+                        <h2 class="h4 mb-4">Récapitulatif du produit</h2>
+
+                        <p class="text-muted">
+                            Vérifiez les informations avant de créer votre produit.
+                        </p>
+
+                        <div id="resume-produit">
+
+                            <!-- L'aperçu du produit sera affiché ici -->
+
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+
+                            <button type="button" id="precedent-3" class="btn btn-outline-secondary">
+                                Précédent
+                            </button>
+
+                            <button type="submit" id="creer-produit" class="btn btn-primary">
+                                Créer le produit
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+            </form>
+        </main>
+    </div>
+
+
+
+    <script src="Back-office.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
